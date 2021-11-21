@@ -1,5 +1,5 @@
 :root {
-    --primary: #34f8aa;
+    --primary: #34ebf8;
     --background: rgba(211, 209, 209, 0.658);
 }
 
@@ -9,11 +9,10 @@
 }
 
 body {
-    
-    
-    
-   
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
+
 
 main {
     
@@ -62,8 +61,6 @@ label {
     font-size: 20px;
     width: 200px;
     
-    
-    
 }
 
 
@@ -71,8 +68,19 @@ input {
     border-radius: 10px;
     border: 2px solid lightgray;
     font-size: larger;
+    padding: 10px 15px;
 }
 
+button {
+    margin-top: 15px;
+    color: var(--primary);
+    font-size: 20px;
+    border: none;
+    background-color: rgb(138, 136, 136);
+    border-radius: 10px;
+    padding: 15px 25px;
+}
+ 
 hr {
     border: 1px solid grey;
     width: 80%;
@@ -111,7 +119,8 @@ footer {
 @media only screen and (min-width: 1000px) {
     
     main {
-        width: 60%;
+        width: 50%;
+        
     }
 
 

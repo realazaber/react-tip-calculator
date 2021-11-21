@@ -1,15 +1,44 @@
-import react, { useState } from "react";
+import { useState } from "react";
 
 import "./css/main.css";
-
-
 
 function App() {
 
   const [total, setTotal] = useState(0);
+  const [people, setPeople] = useState(0);
+  const [tip, setTip] = useState(0);
+
+  const [finalPrice, setFinalPrice] = useState(0);
+
+  const calculate = () => {
+    if (total !== 0 && people !== 0) {
+
+      let tipValue = (total / 100) * tip;
+      
+
+      
+      console.log("Tip value: " + tipValue);
+      console.log("Total: " + total);
+      console.log("People: " + people);
+
+      let calculation = (Number(total) + Number(tipValue)) / Number(people);
 
 
-  const calculateTotal = () => {
+
+      setFinalPrice(calculation);  
+    }
+    
+    else if (total === 0 && people !== 0) {
+      alert("Please fill in total field.");
+    }
+
+    else if (total !== 0 && people === 0) {
+      alert("Please fill in people field.");
+    }
+    else {
+      alert("Please fill in total and people fields.");
+    }
+
     
   }
 
@@ -26,29 +55,33 @@ function App() {
           
           <div className="inputField">
             <label htmlFor="total">
-              Total: 
+              * Total $: 
             </label>
-            <input type="number" id="total" />
+            <input type="number" id="total" onChange={event => setTotal(event.target.value)}/>
           </div>
                               
           <div className="inputField">
             <label htmlFor="people">
-              Number of people: 
+              * Number of people: 
             </label>
-            <input type="number" id="people" />
+            <input type="number" id="people" onChange={event => setPeople(event.target.value)}/>
           </div>
           
           <div className="inputField">
             <label htmlFor="tip">
               Tip %: 
             </label>
-            <input type="number" id="tip" />
+            <input type="number" id="tip" onChange={event => setTip(event.target.value)}/>
           </div>
+          <button onClick={calculate}>
+            Calculate
+          </button>
+          
         </div>
         <div id="owing">
           <hr />
           <h3>
-            Price per person: ${total}
+            Price per person: ${finalPrice}
           </h3>
         </div>
         <footer className="blackBackground">
