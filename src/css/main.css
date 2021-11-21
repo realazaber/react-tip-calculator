@@ -9,7 +9,7 @@
 }
 
 body {
-    overflow-x: hidden;
+    
     overflow-y: hidden;
 }
 
@@ -22,8 +22,8 @@ main {
     align-items: center;
     
     flex-direction: column;
-    margin: auto;
-    margin-top: 90px;
+    
+    margin-top: 5vh;
     
     
 
@@ -43,7 +43,7 @@ main {
 
 #mainContent {
     background-color: var(--background);
-    width: 100%;
+    
 
     
     display: flex;
@@ -79,6 +79,20 @@ button {
     background-color: rgb(138, 136, 136);
     border-radius: 10px;
     padding: 15px 25px;
+
+    transition-duration: 500ms;
+}
+
+button:hover {
+    background-color: rgb(117, 117, 117);
+    transition-duration: 500ms;
+    border-radius: 15px;
+}
+
+button:active {
+    background-color: rgb(138, 136, 136);
+    transition-duration: 500ms;
+    border-radius: 20px;
 }
  
 hr {
@@ -120,10 +134,13 @@ footer {
     
     main {
         width: 50%;
-        
+        margin: auto;
+        margin-top: 10vh;
     }
 
-
+    #mainContent {
+        width: 100%;
+    }
     
     input {
         padding: 10px;
@@ -139,9 +156,14 @@ footer {
 /* Mobile */
 @media only screen and (max-width: 1000px) {
 
+    main {
+        margin: 5vh 10px;
+    }
+
     #mainContent {
         padding: 10px 10px;
         text-align: center;
+        
     }
 
     input {

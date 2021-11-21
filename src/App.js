@@ -43,7 +43,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    
       <main>
         <div id="topBar" className="blackBackground">
           <h1>
@@ -88,7 +88,7 @@ function App() {
           &copy; Therealcoolpup
         </footer>
       </main>
-    </div>
+    
   );
 }
 
